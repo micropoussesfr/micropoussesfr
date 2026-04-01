@@ -1,0 +1,44 @@
+[
+  {
+    "id": 1,
+    "name": "Basilic",
+    "price": 6.90,
+    "image": "images/basilic.jpg",
+    "description": "Arôme doux et anisé, parfait pour les huiles et tartares."
+  },
+  {
+    "id": 2,
+    "name": "Radis",
+    "price": 6.50,
+    "image": "images/radis.jpg",
+    "description": "Saveur piquante, tiges magenta croquantes."
+  },
+  {
+    "id": 3,
+    "name": "Pois",
+    "price": 7.20,
+    "image": "images/pois.jpg",
+    "description": "Croquant sucré et tendre."
+  },
+  {
+    "id": 4,
+    "name": "Shiso",
+    "price": 8.90,
+    "image": "images/shiso.jpg",
+    "description": "Notes de menthe et cannelle."
+  },
+  {
+    "id": 5,
+    "name": "Capucine",
+    "price": 7.50,
+    "image": "images/capucine.jpg",
+    "description": "Feuilles poivrées et fleurs comestibles."
+  },
+  {
+    "id": 6,
+    "name": "Moutarde Wasabi",
+    "price": 8.20,
+    "image": "images/moutarde.jpg",
+    "description": "Puissance rafraîchissante, relevé intense."
+  }
+]
