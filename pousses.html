@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="description" content="Micro-Pousses Alsace – microgreens frais, récoltés en Alsace et livrés en 24h aux restaurants. Circuit court, terroir, fraîcheur garantie.">
+  <title>Micro-Pousses Alsace | Microgreens frais en Alsace</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, 'Segoe UI', 'Roboto', 'Helvetica Neue', sans-serif;
+      background-color: #FDF9F2;
+      color: #2D3E2B;
+      line-height: 1.5;
+      scroll-behavior: smooth;
+    }
+
+    /* container principal */
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* Hero section */
+    .hero {
+      position: relative;
+      background-image: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1582284540020-8acbe03f4924?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80');
+      background-size: cover;
+      background-position: center 30%;
+      background-repeat: no-repeat;
+      padding: 130px 0 100px;
+      text-align: center;
+      color: white;
+    }
+
+    .hero-content {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .hero h1 {
+      font-size: 2.8rem;
+      font-weight: 700;
+      line-height: 1.2;
+      margin-bottom: 1rem;
+      text-shadow: 0 2px 5px rgba(0,0,0,0.3);
+    }
+
+    .hero p {
+      font-size: 1.25rem;
+      margin-bottom: 2rem;
+      opacity: 0.95;
+    }
+
+    .btn {
+      display: inline-block;
+      background-color: #C9A03D;
+      color: #1F3B1A;
+      font-weight: 600;
+      padding: 14px 32px;
+      border-radius: 40px;
+      text-decoration: none;
+      font-size: 1.1rem;
+      transition: all 0.25s ease;
+      border: none;
+      cursor: pointer;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    .btn:hover {
+      background-color: #B8892C;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+      color: #1F3B1A;
+    }
+
+    /* sections communes */
+    section {
+      padding: 70px 0;
+    }
+
+    .section-title {
+      font-size: 2.2rem;
+      text-align: center;
+      margin-bottom: 2.5rem;
+      color: #2B5E2F;
+      position: relative;
+      font-weight: 600;
+    }
+
+    .section-title:after {
+      content: '';
+      display: block;
+      width: 70px;
+      height: 3px;
+      background: #C9A03D;
+      margin: 12px auto 0;
+      border-radius: 3px;
+    }
+
+    /* cartes "why local" */
+    .cards-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      justify-content: center;
+      margin-top: 20px;
+    }
+
+    .card {
+      background: white;
+      border-radius: 24px;
+      padding: 30px 24px;
+      flex: 1 1 280px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+      transition: transform 0.2s, box-shadow 0.2s;
+      text-align: center;
+      border: 1px solid #E9E0D0;
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 16px 28px rgba(0, 0, 0, 0.08);
+    }
+
+    .card-icon {
+      font-size: 2.8rem;
+      margin-bottom: 1rem;
+    }
+
+    .card h3 {
+      font-size: 1.6rem;
+      margin-bottom: 1rem;
+      color: #2B5E2F;
+    }
+
+    .card p {
+      color: #4A5B44;
+    }
+
+    /* variétés : grid produits */
+    .varieties-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+      gap: 28px;
+      margin-bottom: 32px;
+    }
+
+    .variety-item {
+      background: #FFFFFF;
+      border-radius: 20px;
+      padding: 20px 18px;
+      transition: all 0.2s;
+      border-left: 5px solid #C9A03D;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.02);
+    }
+
+    .variety-item h4 {
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem;
+      color: #2C5A2A;
+      font-weight: 600;
+    }
+
+    .variety-item p {
+      color: #4F5E48;
+      font-size: 0.95rem;
+    }
+
+    .note-varieties {
+      background: #F1EBDD;
+      padding: 18px;
+      border-radius: 40px;
+      text-align: center;
+      font-weight: 500;
+      margin-top: 10px;
+      font-size: 1rem;
+      color: #2C5E2E;
+    }
+
+    /* section For Chefs */
+    .chefs-wrapper {
+      background: #F6F0E4;
+      border-radius: 40px;
+      padding: 48px 36px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 40px;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .chefs-features {
+      flex: 2;
+      min-width: 240px;
+    }
+
+    .chefs-features h3 {
+      font-size: 1.9rem;
+      margin-bottom: 1.5rem;
+      color: #2B5E2F;
+    }
+
+    .feature-list {
+      list-style: none;
+      margin: 20px 0;
+    }
+
+    .feature-list li {
+      margin-bottom: 14px;
+      font-size: 1.05rem;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .feature-list li::before {
+      content: "✓";
+      background: #C9A03D;
+      color: #2D3E2B;
+      font-weight: bold;
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+    }
+
+    .testimonial {
+      flex: 1.2;
+      background: white;
+      padding: 28px 24px;
+      border-radius: 28px;
+      font-style: italic;
+      box-shadow: 0 12px 20px rgba(0,0,0,0.05);
+      border-top: 4px solid #C9A03D;
+    }
+
+    .testimonial p {
+      font-size: 1.1rem;
+      color: #2D3E2B;
+      margin-bottom: 16px;
+    }
+
+    .testimonial span {
+      font-weight: 600;
+      font-style: normal;
+      display: block;
+      color: #8B6B2C;
+    }
+
+    /* contact section */
+    .contact-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 40px;
+      background: white;
+      border-radius: 40px;
+      padding: 40px 36px;
+      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.04);
+    }
+
+    .contact-info {
+      flex: 1;
+      background: #FEFAF3;
+      padding: 28px;
+      border-radius: 28px;
+    }
+
+    .contact-info h3 {
+      font-size: 1.6rem;
+      color: #2B5E2F;
+      margin-bottom: 1.2rem;
+    }
+
+    .contact-detail {
+      margin: 20px 0;
+      font-size: 1.1rem;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .contact-detail a {
+      color: #2B5E2F;
+      text-decoration: none;
+      font-weight: 500;
+      border-bottom: 1px dashed #C9A03D;
+    }
+
+    .contact-detail a:hover {
+      color: #C9A03D;
+    }
+
+    .sample-note {
+      margin-top: 28px;
+      background: #E9E0CF;
+      padding: 12px 18px;
+      border-radius: 60px;
+      text-align: center;
+      font-weight: 500;
+    }
+
+    .contact-form {
+      flex: 1.4;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 600;
+      color: #2B5E2F;
+    }
+
+    .form-group input, .form-group textarea {
+      width: 100%;
+      padding: 14px 18px;
+      border: 1px solid #DDD2C0;
+      border-radius: 28px;
+      font-family: inherit;
+      font-size: 1rem;
+      background: #FEFCF8;
+      transition: 0.2s;
+    }
+
+    .form-group input:focus, .form-group textarea:focus {
+      outline: none;
+      border-color: #C9A03D;
+      box-shadow: 0 0 0 2px rgba(201, 160, 61, 0.2);
+    }
+
+    button[type="submit"] {
+      background-color: #2B5E2F;
+      color: white;
+      border: none;
+      padding: 12px 28px;
+      font-weight: 600;
+      border-radius: 40px;
+      cursor: pointer;
+      font-size: 1rem;
+      transition: 0.2s;
+    }
+
+    button[type="submit"]:hover {
+      background-color: #1F471F;
+      transform: scale(0.98);
+    }
+
+    .form-message {
+      margin-top: 20px;
+      padding: 12px;
+      border-radius: 30px;
+      background: #E8F0E5;
+      color: #2C5E2E;
+      text-align: center;
+      font-weight: 500;
+    }
+
+    footer {
+      background-color: #2A3B26;
+      color: #E2DFCF;
+      padding: 32px 0;
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    footer p {
+      margin: 0;
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 800px) {
+      .hero h1 {
+        font-size: 2rem;
+      }
+      .section-title {
+        font-size: 1.8rem;
+      }
+      .chefs-wrapper {
+        flex-direction: column;
+        padding: 32px 24px;
+      }
+      .contact-grid {
+        flex-direction: column;
+        padding: 28px;
+      }
+    }
+
+    @media (max-width: 500px) {
+      .container {
+        padding: 0 18px;
+      }
+      .hero {
+        padding: 90px 0;
+      }
+      .btn {
+        padding: 10px 24px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<!-- HERO SECTION -->
+<section class="hero">
+  <div class="hero-content">
+    <h1>Microgreens frais, récoltés en Alsace et livrés en 24h</h1>
+    <p>Direct producteur, circuit court et terroir alsacien. Des micro-pousses d'exception pour sublimer vos créations culinaires.</p>
+    <a href="#contact" class="btn">📦 Commander des échantillons →</a>
+  </div>
+</section>
+
+<main>
+  <!-- WHY LOCAL SECTION : 3 CARDS -->
+  <div class="container">
+    <section id="pourquoi-local">
+      <h2 class="section-title">Pourquoi choisir le local ?</h2>
+      <div class="cards-grid">
+        <div class="card">
+          <div class="card-icon">🚜</div>
+          <h3>Circuit court</h3>
+          <p>De notre ferme à votre cuisine, sans intermédiaire. Transparence totale et soutien à l'économie régionale alsacienne.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">⏱️</div>
+          <h3>Fraîcheur à la commande</h3>
+          <p>Récolte garantie dans les 24h précédant la livraison. Des saveurs et des nutriments préservés, gage de qualité.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">🌾</div>
+          <h3>Terroir alsacien</h3>
+          <p>Nos microgreens poussent en Alsace, dans un environnement maîtrisé qui magnifie la typicité et l'authenticité.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- VARIETIES SECTION : 6 variétés + note -->
+    <section id="varietes">
+      <h2 class="section-title">Nos variétés de microgreens</h2>
+      <div class="varieties-grid">
+        <div class="variety-item"><h4>🌿 Basilic</h4><p>Arôme doux et anisé, parfait pour les huiles, tartares et salades.</p></div>
+        <div class="variety-item"><h4>🔥 Radis</h4><p>Saveur piquante, tiges magenta croquantes. Idéal pour apporter du caractère.</p></div>
+        <div class="variety-item"><h4>🟢 Pois</h4><p>Croquant sucré et tendre, excellent cru ou comme garniture végétale.</p></div>
+        <div class="variety-item"><h4>🌸 Shiso</h4><p>Notes de menthe, cumin et cannelle. Une signature unique pour plats fusion.</p></div>
+        <div class="variety-item"><h4>🌼 Capucine</h4><p>Feuilles poivrées et fleurs comestibles : originalité et couleur dans l'assiette.</p></div>
+        <div class="variety-item"><h4>🔥 Moutarde Wasabi</h4><p>Puissance rafraîchissante, relevé intense pour poissons et viandes.</p></div>
+      </div>
+      <div class="note-varieties">
+        🌱 D'autres variétés disponibles sur demande (coriandre, betterave, fenouil, etc.) — adaptez votre sélection selon vos envies !
+      </div>
+    </section>
+
+    <!-- FOR CHEFS SECTION -->
+    <section id="for-chefs">
+      <h2 class="section-title">Pensé pour les chefs</h2>
+      <div class="chefs-wrapper">
+        <div class="chefs-features">
+          <h3>Une approche 100% professionnelle</h3>
+          <ul class="feature-list">
+            <li>Livraison directe depuis notre site en Alsace, 24h après récolte</li>
+            <li>Emballages flexibles : de 100g à colis sur-mesure, barquettes ou vrac</li>
+            <li>Culture personnalisable : variétés rares, mélanges exclusifs selon votre carte</li>
+            <li>Visite de production possible & accompagnement technique</li>
+          </ul>
+        </div>
+        <div class="testimonial">
+          <p>“ La fraîcheur et l’intensité des microgreens de Micro-Pousses Alsace transforment mes plats. Leur réactivité et la qualité du terroir font la différence. Un partenaire fiable et passionné. ”</p>
+          <span>— Julien M., Chef étoilé à Strasbourg</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT SECTION + FORM SIMULATION -->
+    <section id="contact">
+      <h2 class="section-title">Contact & commandes</h2>
+      <div class="contact-grid">
+        <div class="contact-info">
+          <h3>📞 Discutons de vos besoins</h3>
+          <div class="contact-detail">
+            📱 Téléphone : <a href="tel:+336XXXXXXXX">06 XX XX XX XX</a>
+          </div>
+          <div class="contact-detail">
+            ✉️ Email : <a href="mailto:contact@micropousses.net">contact@micropousses.net</a>
+          </div>
+          <div class="sample-note">
+            🥬 Demandez des échantillons gratuits !<br>
+            Nous livrons des kits découverte aux chefs alsaciens.
+          </div>
+          <p style="margin-top: 24px; font-size: 0.9rem;"><strong>Livraison rapide</strong> dans toute l'Alsace (Bas-Rhin, Haut-Rhin) et zones limitrophes.</p>
+        </div>
+
+        <div class="contact-form">
+          <h3>Formulaire de contact</h3>
+          <form id="simulate-contact-form">
+            <div class="form-group">
+              <label for="name">Nom / Restaurant *</label>
+              <input type="text" id="name" name="name" placeholder="Votre nom ou établissement" required>
+            </div>
+            <div class="form-group">
+              <label for="email">Email *</label>
+              <input type="email" id="email" name="email" placeholder="chef@restaurant.fr" required>
+            </div>
+            <div class="form-group">
+              <label for="message">Message / Variétés souhaitées *</label>
+              <textarea id="message" name="message" rows="3" placeholder="Bonjour, je suis intéressé par des échantillons de..."></textarea>
+            </div>
+            <button type="submit" class="btn" style="background:#C9A03D; color:#2A3B26;">Envoyer la demande</button>
+            <div id="form-status" class="form-message" style="display: none;"></div>
+          </form>
+        </div>
+      </div>
+    </section>
+  </div>
+</main>
+
+<footer>
+  <div class="container">
+    <p>🌱 Micro-Pousses Alsace — producteur de microgreens en Alsace | Circuit court & terroir</p>
+    <p style="margin-top: 12px; font-size: 0.8rem;">© 2025 Micro-Pousses Alsace – Tous droits réservés</p>
+  </div>
+</footer>
+
+<!-- SIMPLE JS : FORM SIMULATION + SMOOTH SCROLL (already via CSS, but for safety) -->
+<script>
+  (function() {
+    // formulaire simulation
+    const form = document.getElementById('simulate-contact-form');
+    const statusDiv = document.getElementById('form-status');
+    
+    if (form) {
+      form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        // récupération champs
+        const nameInput = document.getElementById('name');
+        const emailInput = document.getElementById('email');
+        const messageInput = document.getElementById('message');
+        
+        let isValid = true;
+        if (!nameInput.value.trim()) isValid = false;
+        if (!emailInput.value.trim() || !emailInput.value.includes('@')) isValid = false;
+        if (!messageInput.value.trim()) isValid = false;
+        
+        if (!isValid) {
+          statusDiv.style.display = 'block';
+          statusDiv.style.backgroundColor = '#FCE4D6';
+          statusDiv.style.color = '#A52A1A';
+          statusDiv.innerHTML = '⚠️ Merci de remplir tous les champs (nom, email valide, message).';
+          setTimeout(() => {
+            statusDiv.style.display = 'none';
+          }, 3000);
+          return;
+        }
+        
+        // simulation succès
+        statusDiv.style.display = 'block';
+        statusDiv.style.backgroundColor = '#E0F2E3';
+        statusDiv.style.color = '#1E5A2F';
+        statusDiv.innerHTML = '✅ Message envoyé (simulation). Merci ! Nous vous répondrons sous 24h pour organiser une livraison d’échantillons.';
+        
+        // reset du formulaire
+        form.reset();
+        
+        // disparition auto après 5 sec
+        setTimeout(() => {
+          statusDiv.style.display = 'none';
+        }, 5000);
+      });
+    }
+    
+    // option supplémentaire pour que le lien du hero fonctionne proprement (smooth scroll natif déjà)
+    // gestion manuelle pour les vieux navigateurs (optionnel)
+    const ctaButton = document.querySelector('.hero .btn');
+    if (ctaButton) {
+      ctaButton.addEventListener('click', function(e) {
+        e.preventDefault();
+        const target = document.getElementById('contact');
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    }
+    
+    // Ajout d'un comportement pour tous les ancres internes éventuelles
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        const hash = this.getAttribute('href');
+        if (hash === "#" || hash === "") return;
+        const targetElem = document.querySelector(hash);
+        if (targetElem) {
+          e.preventDefault();
+          targetElem.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    });
+  })();
+</script>
+
+<!-- ========================================= -->
+<!-- ==== INSTRUCTIONS POUR GITHUB PAGES & DOMAINE PERSONNALISÉ ==== -->
+<!-- 
+  COMMENT METTRE EN LIGNE SUR GITHUB PAGES :
+  1. Créez un nouveau repository sur GitHub (public).
+  2. Nommez-le par exemple "micropousses-alsace" (ou "nomdutilisateur.github.io" si vous voulez un site principal).
+  3. Téléchargez le fichier index.html (ce code complet) dans le dépôt.
+  4. Allez dans Settings > Pages (section "Code and automation").
+  5. Source : "Deploy from a branch", choisissez "main" (ou "master") et dossier "/ (root)".
+  6. Cliquez sur Save. Après quelques minutes, votre site sera publié sur https://votreutilisateur.github.io/nom-du-repo/
+  7. Pour un domaine personnalisé (micropousses.net) :
+     - Achetez le domaine micropousses.net chez un registrar.
+     - Dans GitHub Pages, dans la section "Custom domain", ajoutez "micropousses.net".
+     - Configurez les enregistrements DNS chez votre registrar :
+        * Un enregistrement A pointant vers les IP de GitHub : 185.199.108.153, 185.199.109.153, 185.199.110.153, 185.199.111.153
+        * OU un enregistrement CNAME : www.micropousses.net pointant vers votre nom d'utilisateur.github.io.
+     - Patientez quelques minutes pour la propagation.
+  8. Pour Netlify : glissez-déposez le dossier contenant index.html sur Netlify Drop, liez votre domaine facilement.
+  
+  Note : Vous pouvez remplacer l'URL de l'image hero (unsplash) par votre propre photo plus tard.
+-->
+<!-- ========================================= -->
+</body>
+</html>
